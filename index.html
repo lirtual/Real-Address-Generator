@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <!-- 添加 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- 添加 Font Awesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="page-title" data-en="Real Address Generator" data-zh="真实地址生成器">真实地址生成器</h1>
+    <div id="copied" class="copied" data-en="Copied!" data-zh="已复制！">已复制！</div>
+    <div class="info-card">
+      <div class="info-item name" id="name"><i class="fas fa-user"></i> <span></span></div>
+      <div class="info-item gender" id="gender"><i class="fas fa-venus-mars"></i> <span></span></div>
+      <div class="info-item phone" id="phone"><i class="fas fa-phone"></i> <span></span></div>
+      <div class="info-item address" id="address"><i class="fas fa-map-marker-alt"></i> <span></span></div>
+    </div>
+    <div class="controls info-card">
+      <div class="control-item">
+        <i class="fas fa-globe"></i>
+        <select id="country">
+          <!-- 国家选项将通过JavaScript动态填充 -->
+        </select>
+      </div>
+      <div class="control-item button-group">
+        <button class="btn" id="refreshBtn" data-en="Generate Address" data-zh="生成地址">生成地址</button>
+        <button class="btn" id="saveBtn" data-en="Save Address" data-zh="保存地址">保存地址</button>
+      </div>
+    </div>
+    <iframe class="map" id="map"></iframe>
+    <table class="saved-addresses" id="savedAddressesTable">
+      <thead>
+        <tr>
+            <th data-en="Operation" data-zh="操作"></th>
+            <th data-en="Notes" data-zh="备注"></th>
+            <th data-en="Name" data-zh="姓名"></th>
+            <th data-en="Gender" data-zh="性别"></th>
+            <th data-en="Phone" data-zh="电话"></th>
+            <th data-en="Address" data-zh="地址"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 动态生成的内容 -->
+      </tbody>
+    </table>
+    <div id="saveAddressModal" class="modal">
+      <div class="modal-content">
+        <h2 data-en="Save Address" data-zh="保存地址">保存地址</h2>
+        <input type="text" id="addressNote" placeholder="添加备注" data-en-placeholder="Add a note" data-zh-placeholder="添加备注">
+        <div class="button-group">
+          <button class="btn" id="confirmSaveBtn" data-en="Save" data-zh="保存">保存</button>
+          <button class="btn" id="cancelSaveBtn" data-en="Cancel" data-zh="取消">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    Developed by lirtual © 2024 ｜ <a href="https://github.com/lirtual/Real-Address-Generator" target="_blank">GitHub</a> ｜ Generate realistic addresses for testing and development purposes
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
